@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap");
+:root {
+  --bg: #f7f3e8;
+  --text: #111;
+  --muted: rgba(17, 17, 17, 0.72);
+  --line: rgba(0, 0, 0, 0.12);
+  --glass: rgba(247, 243, 232, 0.267);
+  --glass-2: rgba(247, 243, 232, 0.9);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+
+  color: var(--text);
+  background: var(--bg);
+  font-family:
+    "Inclusive Sans",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  overflow: hidden;
+}
+
+/* ✅ NAV */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+
+  background: var(--glass);
+  backdrop-filter: blur(1px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.nav-inner h1 {
+  font-family: "Cinzel", serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 500;
+  color: #111;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* ✅ Logo image */
+.brand-logo {
+  height: 34px; /* change as needed */
+  width: auto;
+  display: block;
+}
+
+/* If you want text logo instead */
+.brand-text {
+  font-family: "Cinzel", serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.nav-right-desk {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav-right-mob {
+  display: none;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  border-bottom: 1px solid transparent;
+  padding: 6px 2px;
+  transition:
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.nav-link:hover {
+  border-bottom-color: rgba(17, 17, 17, 0.7);
+  opacity: 1;
+}
+
+/* ✅ HERO 100vh */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  /* nav height spacing */
+  padding-top: 76px;
+}
+
+/* ✅ ONE BIG IMAGE BACKGROUND
+   Put your image file in same folder and rename it "hero.jpg" OR change path below.
+*/
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("./assets/hero/desk.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+}
+
+/* Overlay for readability (soft luxe vibe) */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(247 243 232 / 10%) 0%,
+    rgb(247 243 232 / 9%) 45%,
+    rgba(247, 243, 232, 0.205) 100%
+  );
+}
+
+/* Content card */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(720px, 92vw);
+  text-align: center;
+
+  background: rgba(247, 243, 232, 0.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 22px;
+
+  padding: 26px 18px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+
+  animation: enter 600ms ease forwards;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kicker {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.title {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.05;
+}
+
+.subtitle {
+  margin: 12px auto 0;
+  max-width: 52ch;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.85);
+}
+
+.cta-row {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 16px;
+  border-radius: 999px;
+
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease,
+    background 0.15s ease;
+  user-select: none;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn.primary {
+  background: rgba(17, 17, 17, 0.9);
+  color: #fff;
+  border-color: rgba(17, 17, 17, 0.9);
+}
+
+.btn.primary:hover {
+  opacity: 0.95;
+}
+
+.btn.ghost {
+  background: rgba(247, 243, 232, 0.55);
+  color: var(--text);
+}
+
+.footnote {
+  margin: 16px 0 0;
+  font-size: 12px;
+  color: rgba(17, 17, 17, 0.7);
+}
+
+/* ✅ MOBILE TUNING */
+@media (max-width: 480px) {
+  .nav-right-desk {
+    display: none;
+    align-items: center;
+    gap: 14px;
+  }
+  .nav-right-mob {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .nav-inner h1 {
+    font-family: "Cinzel", serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    color: #111;
+  }
+
+  .brand-logo {
+    height: 28px;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("./assets/hero/03.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.02);
+  }
+
+  .hero-content {
+    padding: 22px 14px;
+    border-radius: 18px;
+  }
+  .nav-link {
+    font-size: 25px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+}
+
+/* ✅ Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-content {
+    animation: none;
+  }
+  .btn {
+    transition: none;
+  }
+}
