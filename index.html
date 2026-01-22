@@ -141,5 +141,19 @@
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-00DKMG9DNC"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-00DKMG9DNC");
+    </script>
   </body>
 </html>
