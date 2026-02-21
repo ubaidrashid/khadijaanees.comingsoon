@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap");
+
 :root {
   --bg: #f7f3e8;
   --text: #111;
@@ -20,7 +21,6 @@ body {
 
 body {
   margin: 0;
-
   color: var(--text);
   background: var(--bg);
   font-family:
@@ -41,7 +41,6 @@ body {
   left: 0;
   width: 100%;
   z-index: 50;
-
   background: var(--glass);
   backdrop-filter: blur(1px);
   border-bottom: 1px solid var(--line);
@@ -51,20 +50,12 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 14px 18px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
 }
-.nav-inner h1 {
-  font-family: "Cinzel", serif;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-size: 32px;
-  font-weight: 500;
-  color: #111;
-}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -73,20 +64,14 @@ body {
   color: var(--text);
 }
 
-/* ✅ Logo image */
-.brand-logo {
-  height: 34px; /* change as needed */
-  width: auto;
-  display: block;
-}
-
-/* If you want text logo instead */
-.brand-text {
+.brand-title {
   font-family: "Cinzel", serif;
   letter-spacing: 3px;
   text-transform: uppercase;
+  font-size: 32px;
   font-weight: 500;
-  font-size: 18px;
+  color: #111;
+  margin: 0;
 }
 
 .nav-right-desk {
@@ -94,6 +79,7 @@ body {
   align-items: center;
   gap: 14px;
 }
+
 .nav-right-mob {
   display: none;
   align-items: center;
@@ -119,20 +105,15 @@ body {
   opacity: 1;
 }
 
-/* ✅ HERO 100vh */
+/* ✅ HERO */
 .hero {
   min-height: 100vh;
   position: relative;
   display: grid;
   place-items: center;
-
-  /* nav height spacing */
   padding-top: 76px;
 }
 
-/* ✅ ONE BIG IMAGE BACKGROUND
-   Put your image file in same folder and rename it "hero.jpg" OR change path below.
-*/
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -143,7 +124,6 @@ body {
   transform: scale(1.02);
 }
 
-/* Overlay for readability (soft luxe vibe) */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -155,7 +135,6 @@ body {
   );
 }
 
-/* Content card */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -169,7 +148,6 @@ body {
 
   padding: 26px 18px;
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
-
   animation: enter 600ms ease forwards;
 }
 
@@ -210,6 +188,7 @@ body {
   color: rgba(17, 17, 17, 0.85);
 }
 
+/* ✅ CTA */
 .cta-row {
   margin-top: 18px;
   display: flex;
@@ -223,20 +202,18 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   padding: 12px 16px;
   border-radius: 999px;
-
   font-size: 12px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-
   border: 1px solid rgba(0, 0, 0, 0.18);
   transition:
     transform 0.15s ease,
     opacity 0.15s ease,
     background 0.15s ease;
   user-select: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -264,67 +241,293 @@ body {
   color: rgba(17, 17, 17, 0.7);
 }
 
-/* ✅ MOBILE TUNING */
+/* ✅ INLINE NEWSLETTER (Front page) */
+.nl-inline {
+  margin: 18px auto 0;
+  width: min(560px, 100%);
+  padding: 14px 14px 12px;
+  background: rgba(247, 243, 232, 0.65);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+}
+
+.nl-inline__title {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.nl-inline__sub {
+  margin: 6px 0 10px;
+  font-size: 13px;
+  color: rgba(17, 17, 17, 0.75);
+}
+
+.nl-inline__form {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 10px;
+}
+
+.nl-inline__input {
+  height: 46px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  background: rgba(247, 243, 232, 0.75);
+  padding: 0 14px;
+  font-size: 14px;
+  outline: none;
+}
+
+.nl-inline__input:focus {
+  border-color: rgba(17, 17, 17, 0.55);
+}
+
+.nl-inline__btn {
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid rgba(17, 17, 17, 0.9);
+  background: rgba(17, 17, 17, 0.9);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nl-inline__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.nl-inline__msg {
+  margin: 8px 0 0;
+  min-height: 18px;
+  font-size: 13px;
+  color: rgba(17, 17, 17, 0.85);
+}
+
+/* =========================
+   ✅ POPUP MODAL
+   ========================= */
+.nl {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+}
+
+.nl.is-open {
+  display: block;
+}
+
+.nl__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.nl__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(980px, 92vw);
+  margin: 90px auto 0;
+  background: rgba(247, 243, 232, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  animation: nlEnter 220ms ease forwards;
+}
+
+@keyframes nlEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.nl__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: rgba(247, 243, 232, 0.85);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.nl__close:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.nl__media {
+  background: none;
+  padding: 0;
+  overflow: hidden;
+  min-height: 340px;
+}
+
+.nl__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.nl__body {
+  padding: 22px 22px 18px;
+  display: grid;
+  gap: 10px;
+  align-content: center;
+}
+
+.nl__coming {
+  margin: 6px 0 0;
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 34px;
+  line-height: 1.05;
+}
+
+.nl__sub {
+  margin: 0 0 6px;
+  color: rgba(17, 17, 17, 0.75);
+  font-size: 14px;
+}
+
+.nl__form {
+  display: grid;
+  grid-template-columns: 1fr 170px;
+  gap: 10px;
+}
+
+.nl__input {
+  height: 46px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  background: rgba(247, 243, 232, 0.75);
+  padding: 0 14px;
+  font-size: 14px;
+  outline: none;
+}
+
+.nl__input:focus {
+  border-color: rgba(17, 17, 17, 0.55);
+}
+
+.nl__btn {
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid rgba(17, 17, 17, 0.9);
+  background: rgba(17, 17, 17, 0.9);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nl__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.nl__msg {
+  margin: 0;
+  min-height: 18px;
+  font-size: 13px;
+  color: rgba(17, 17, 17, 0.85);
+}
+
+.nl__cta {
+  margin-top: 10px;
+}
+
+.nl__hint {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: rgba(17, 17, 17, 0.7);
+}
+
+/* ✅ MOBILE */
+@media (max-width: 780px) {
+  .nl__dialog {
+    grid-template-columns: 1fr;
+    margin-top: 70px;
+  }
+  .nl__media {
+    min-height: 220px;
+  }
+  .nl__form {
+    grid-template-columns: 1fr;
+  }
+  .nl-inline__form {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 480px) {
   .nav-right-desk {
     display: none;
-    align-items: center;
-    gap: 14px;
   }
   .nav-right-mob {
     display: flex;
-    align-items: center;
-    gap: 14px;
   }
 
-  .nav-inner h1 {
-    font-family: "Cinzel", serif;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+  .brand-title {
     font-size: 20px;
-    font-weight: 500;
-    color: #111;
-  }
-
-  .brand-logo {
-    height: 28px;
   }
 
   .nav-link {
-    font-size: 11px;
+    font-size: 25px;
   }
 
   .hero {
     padding-top: 70px;
   }
+
   .hero-bg {
-    position: absolute;
-    inset: 0;
     background-image: url("./assets/hero/desk2.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transform: scale(1.02);
   }
 
   .hero-content {
     padding: 22px 14px;
     border-radius: 18px;
   }
-  .nav-link {
-    font-size: 25px;
-  }
+
   .subtitle {
     font-size: 14px;
   }
 }
 
-/* ✅ Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .hero-content {
     animation: none;
   }
   .btn {
     transition: none;
+  }
+  .nl__dialog {
+    animation: none;
   }
 }

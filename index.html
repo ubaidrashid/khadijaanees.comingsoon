@@ -12,6 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <link
       rel="icon"
       type="image/png"
@@ -38,20 +39,14 @@
     />
 
     <link rel="stylesheet" href="style.css" />
-    <title>Khadija Anees — Coming Soon</title>
   </head>
 
   <body>
+    <!-- ✅ NAV -->
     <header class="nav">
       <div class="nav-inner">
-        <!-- BRAND / LOGO -->
         <a class="brand" href="#">
-          <!-- Option A: Text logo -->
           <h1 class="brand-title">Khadija Anees</h1>
-
-          <!-- Option B: Image logo (use this instead)
-          <img class="brand-logo" src="./logo.png" alt="Khadija Anees" />
-          -->
         </a>
 
         <!-- Mobile icons -->
@@ -86,8 +81,9 @@
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-            <i class="fa-brands fa-instagram"></i>Instagram</a
-          >
+            <i class="fa-brands fa-instagram"></i>Instagram
+          </a>
+
           <a
             class="nav-link"
             href="https://wa.me/923123006664?text=Hello%20Khadija%20Anees%2C%20I%20would%20like%20to%20know%20more%20about%20your%20collection."
@@ -95,13 +91,13 @@
             rel="noopener noreferrer"
             aria-label="WhatsApp"
           >
-            <i class="fa-brands fa-whatsapp"></i>WhatsApp</a
-          >
+            <i class="fa-brands fa-whatsapp"></i>WhatsApp
+          </a>
         </div>
       </div>
     </header>
 
-    <!-- HERO (100vh) -->
+    <!-- ✅ HERO -->
     <main class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
@@ -116,13 +112,50 @@
           crafted for elegance.
         </p>
 
+        <!-- ✅ Newsletter Inline -->
+        <div class="nl-inline">
+          <h3 class="nl-inline__title">Subscribe to our Newsletter</h3>
+          <p class="nl-inline__sub">
+            Join our mailing list for latest updates.
+          </p>
+
+          <form
+            class="nl-inline__form"
+            id="nlFormInline"
+            autocomplete="on"
+            novalidate
+          >
+            <input
+              class="nl-inline__input"
+              id="nlEmailInline"
+              name="email"
+              type="email"
+              inputmode="email"
+              placeholder="your-email@example.com"
+              required
+            />
+            <button class="nl-inline__btn" id="nlBtnInline" type="submit">
+              Join
+            </button>
+          </form>
+
+          <p
+            class="nl-inline__msg"
+            id="nlMsgInline"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </div>
+
+        <!-- ✅ CTA Buttons -->
         <div class="cta-row">
           <a
             class="btn primary"
-            href="mailto:khadijaaneescustomers@gmail.com"
+            href="https://wa.me/923123006664?text=Hello%20Khadija%20Anees%2C%20I%20would%20like%20to%20know%20more%20about%20your%20collection."
             target="_blank"
+            rel="noopener noreferrer"
           >
-            Notify Me
+            WhatsApp
           </a>
 
           <a
@@ -132,6 +165,11 @@
           >
             Contact
           </a>
+
+          <!-- ✅ Optional: Popup open button (small) -->
+          <button class="btn ghost" id="openPopup" type="button">
+            Open Popup
+          </button>
         </div>
 
         <p class="footnote">
@@ -140,9 +178,80 @@
       </section>
     </main>
 
+    <!-- ✅ POPUP (Left image + Right content) -->
+    <!-- <div class="nl" id="nlModal" aria-hidden="true">
+      <div class="nl__backdrop" id="nlBackdrop"></div>
+
+      <div
+        class="nl__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Coming Soon Popup"
+      >
+        <button class="nl__close" id="nlClose" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="nl__media" aria-hidden="true">
+          <img src="./assets/hero/NL.png" alt="Khadija Anees" />
+        </div>
+
+        <div class="nl__body">
+          <p class="kicker">Luxury • Handcrafted • Bespoke</p>
+          <h2 class="nl__coming">Coming Soon</h2>
+
+          <p class="nl__sub">
+            Khadija Anees Boutique — refined handwork and custom stitching,
+            crafted for elegance.
+          </p>
+
+          <form class="nl__form" id="nlFormPopup" autocomplete="on" novalidate>
+            <input
+              class="nl__input"
+              id="nlEmailPopup"
+              type="email"
+              placeholder="your-email@example.com"
+              required
+            />
+            <button class="nl__btn" id="nlBtnPopup" type="submit">Join</button>
+          </form>
+
+          <p
+            class="nl__msg"
+            id="nlMsgPopup"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+          <div class="cta-row nl__cta">
+            <a
+              class="btn primary"
+              href="https://wa.me/923123006664?text=Hello%20Khadija%20Anees%2C%20I%20would%20like%20to%20know%20more%20about%20your%20collection."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
+
+            <a
+              class="btn ghost"
+              href="mailto:khadijaaneescustomers@gmail.com?subject=Inquiry%20-%20Khadija%20Anees&body=Hello%20Khadija%20Anees%20Team,%0D%0A%0D%0AI%20would%20like%20to%20know%20more%20about%20your%20collection."
+              target="_blank"
+            >
+              Contact
+            </a>
+          </div>
+
+          <p class="nl__hint">Tip: Press <b>Esc</b> to close.</p>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- ✅ Year -->
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -154,8 +263,9 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-00DKMG9DNC");
     </script>
+
+    <script src="./script.js"></script>
   </body>
 </html>
